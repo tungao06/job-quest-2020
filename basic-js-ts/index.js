@@ -84,9 +84,9 @@ function fizzBuzz(val) {
   return boolStrings[`${val % 3}${val % 5}`] ?? val;
 }
 
-// console.log(fizzBuzz(21));
-// console.log(fizzBuzz(25));
-// console.log(fizzBuzz(45));
+console.log(fizzBuzz(21));
+console.log(fizzBuzz(25));
+console.log(fizzBuzz(45));
 
 // Array.from(Array(50)).map((val, i) =>
 //   console.log(
