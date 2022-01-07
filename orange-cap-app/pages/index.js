@@ -92,27 +92,30 @@ export default function Home() {
         className="relative w-5/6 max-h-screen p-4 overflow-y-auto bg-gray-100 rounded-lg shadow-lg scrollbar-hide sm:w-2/3"
       >
         {loading && (
-          <div className="absolute inset-0 flex bg-gray-400 bg-opacity-50">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-6 h-6 m-auto animate-spin"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-              />
-            </svg>
+          <div className="absolute inset-0 z-20 flex bg-gray-300 bg-opacity-50">
+            <div className="flex flex-col items-center justify-center gap-6 m-auto">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-6 h-6 animate-spin"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 c0 01-15.357-2m15.357 2H15"
+                />
+              </svg>
+              <p className="font-bold animate-ping">Loading ...</p>
+            </div>
           </div>
         )}
         <ul className="flex flex-col gap-2">
           {data.joke.map((jokes) => (
             <li
-              className="px-3 py-4 text-base transition duration-100 ease-in-out border-2 rounded-lg cursor-pointer hover:scale-105"
+              className="relative px-3 py-6 text-base transition duration-100 ease-in-out border-2 rounded-lg shadow-lg cursor-pointer hover:scale-105"
               key={jokes.id}
               style={{ borderColor: `#${Math.floor(Math.random() * 16777215).toString(16)}` }}
             >
