@@ -38,7 +38,7 @@ export default function Home() {
 
   return (
     <div className="relative flex flex-col items-center justify-center w-screen h-screen gap-4 py-2 overflow-auto bg-orange-cap">
-      <div className="sticky top-0 w-5/6 p-4 text-sm bg-gray-100 rounded-lg shadow-lg sm:w-2/3">
+      <div className="sticky top-0 w-5/6 p-4 text-sm bg-gray-100 rounded-lg shadow-lg sm:w-2/3 lg:w-1/2">
         <form onSubmit={handleSubmit} className="grid grid-cols-3 gap-4">
           <div className="">
             <p className="text-sm antialiased leading-4">Numbers</p>
@@ -89,7 +89,7 @@ export default function Home() {
       </div>
       <div
         id="list-joke"
-        className="relative w-5/6 max-h-screen p-4 overflow-y-auto bg-gray-100 rounded-lg shadow-lg scrollbar-hide sm:w-2/3"
+        className="relative w-5/6 max-h-screen p-4 overflow-y-auto bg-gray-100 rounded-lg shadow-lg lg:p-8 scrollbar-hide sm:w-2/3 lg:w-1/2"
       >
         {loading && (
           <div className="absolute inset-0 z-20 flex bg-gray-300 bg-opacity-50">
@@ -105,7 +105,7 @@ export default function Home() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 c0 01-15.357-2m15.357 2H15"
+                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
                 />
               </svg>
               <p className="font-bold animate-ping">Loading ...</p>
@@ -115,10 +115,11 @@ export default function Home() {
         <ul className="flex flex-col gap-2">
           {data.joke.map((jokes) => (
             <li
-              className="relative px-3 py-6 text-base transition duration-100 ease-in-out border-2 rounded-lg shadow-lg cursor-pointer hover:scale-105"
+              className="relative px-3 py-6 text-base transition duration-100 ease-in-out border-2 rounded-lg cursor-pointer hover:scale-105"
               key={jokes.id}
               style={{ borderColor: `#${Math.floor(Math.random() * 16777215).toString(16)}` }}
             >
+              {/* <span className="absolute top-0 left-0 p-1 text-xs">{`Joke id : ${jokes.id}`}</span> */}
               {jokes.joke}
             </li>
           ))}
