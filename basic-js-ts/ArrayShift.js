@@ -6,7 +6,6 @@ function shift(arr, direction, index) {
   while (i < index) {
     if (direction == "right") arr.unshift(arr.pop());
     else arr.push(arr.shift());
-    // console.log(`arr`, i, arr);
     i++;
   }
 

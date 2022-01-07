@@ -21,7 +21,6 @@ function shift(arr, direction, index) {
   while (i < index) {
     if (direction == "right") arr.unshift(arr.pop());
     else arr.push(arr.shift());
-    // console.log(`arr`, i, arr);
     i++;
   }
 
@@ -30,15 +29,6 @@ function shift(arr, direction, index) {
 
 console.log(">", shift(["john", "jane", "sarah", "alex"], "left", 2));
 console.log(">", shift([1, 2, 3, 4, 5], "right", 3));
-
-// let result1 = ["sarah", "alex", "john", "jane"];
-// let result2 = [3, 4, 5, 1, 2];
-
-// console.log("START1", result1);
-// console.log(">", shift(["john", "jane", "sarah", "alex"], "left", 2), result1);
-
-// console.log("START2", result2);
-// console.log(">", shift([1, 2, 3, 4, 5], "right", 3), result2);
 
 console.log("+++++++++++++++++++++++++++++++ Second max +++++++++++++++++++++++++++++++");
 
@@ -50,7 +40,6 @@ function secondMax(arr) {
         return arr.indexOf(item) == pos;
       });
 
-    // console.log(uniqueArray, uniqueArray.length - 2);
     if (uniqueArray.length > 1) {
       return uniqueArray[uniqueArray.length - 2];
     } else if (uniqueArray.length > 0) {
@@ -87,15 +76,3 @@ function fizzBuzz(val) {
 console.log(fizzBuzz(21));
 console.log(fizzBuzz(25));
 console.log(fizzBuzz(45));
-
-// Array.from(Array(50)).map((val, i) =>
-//   console.log(
-//     "index ",
-//     i,
-//     "modulo",
-//     i % 3 == 0 ? 1 : 0,
-//     i % 5 == 0 ? 1 : 0,
-//     i % 3 == 0 || i % 5 == 0 ? "true" : "",
-//     fizzBuzz(i)
-//   )
-// );

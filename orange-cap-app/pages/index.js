@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function Home() {
-  const randomColor = Math.floor(Math.random() * 16777215).toString(16);
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState({ joke: [] });
   const [num, setNum] = useState(1);
@@ -119,7 +118,6 @@ export default function Home() {
               key={jokes.id}
               style={{ borderColor: `#${Math.floor(Math.random() * 16777215).toString(16)}` }}
             >
-              {/* <span className="absolute top-0 left-0 p-1 text-xs">{`Joke id : ${jokes.id}`}</span> */}
               {jokes.joke}
             </li>
           ))}

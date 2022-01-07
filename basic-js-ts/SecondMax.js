@@ -8,7 +8,6 @@ function secondMax(arr) {
         return arr.indexOf(item) == pos;
       });
 
-    // console.log(uniqueArray, uniqueArray.length - 2);
     if (uniqueArray.length > 1) {
       return uniqueArray[uniqueArray.length - 2];
     } else if (uniqueArray.length > 0) {
